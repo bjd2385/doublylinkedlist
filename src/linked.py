@@ -2,7 +2,7 @@
 
 from typing import Any, List, Optional
 from collections.abc import Iterable
-from .exceptions import NoNextNodeError, NoPreviousNodeError
+from .exceptions import *
 
 
 class Node:
@@ -96,7 +96,7 @@ class DoublyLinkedList(Iterable):
             else:
                 self._start = self._start.nxt()
 
-        except NoNextNodeError:
+        except (NoNextNodeError, AttributeError):
             del self._start
             raise StopIteration
 
