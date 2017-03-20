@@ -1,22 +1,8 @@
-#! /usr/bin/env python3.6
-# -*- coding: utf-8 -*-
-
-""" A quick and dirty linked list implementation """
+## A quick and dirty linked list implementation
 
 from typing import Any, List, Optional
 from collections.abc import Iterable
-
-
-class NoNodeError(Exception):
-    pass
-
-
-class NoNextNodeError(NoNodeError):
-    pass
-
-
-class NoPreviousNodeError(NoNodeError):
-    pass
+from .exceptions import NoNextNodeError, NoPreviousNodeError
 
 
 class Node:
