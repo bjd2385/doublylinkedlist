@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase, main
-
-from src.linked import DoublyLinkedList, NoNextNodeError, NoPreviousNodeError, Node
+from src.linked import DoublyLinkedList, Node
+from src.exceptions import *
 
 
 class TestDLL(TestCase):

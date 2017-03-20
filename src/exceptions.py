@@ -1,5 +1,7 @@
 ## Custom exceptions for dll
 
+__all__ = ['NoNextNodeError', 'NoPreviousNodeError']
+
 
 class _NoNodeError(Exception):
     pass
