@@ -87,17 +87,18 @@ class DoublyLinkedList(Iterable):
         self.last = self.head
 
     def __iter__(self) -> 'DoublyLinkedList':
+        self._start = None
         return self
 
     def __next__(self) -> Node:
         try:
-            if not hasattr(self, '_start'):
+            if self._start is None:
                 self._start = self.head
             else:
                 self._start = self._start.nxt()
 
         except (NoNextNodeError, AttributeError):
-            del self._start
+            # self._start is _still_ None
             raise StopIteration
 
         else:
